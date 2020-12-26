@@ -55,10 +55,10 @@ namespace Shop
             });
 
             // conexão com o banco de dados em memória
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
 
             // conexão com o banco de dados SQL
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             // Por causa do AddDbContext, não precisa mais usar AddScoped.
             // Pode até apagar do projeto
